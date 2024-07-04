@@ -1,0 +1,24 @@
+#
+# Ignore these paths, do not commit to repository.
+#
+
+# Node.js npm.
+node_modules/
+coverage/
+.nyc_output/
+
+# Logs.
+log/
+logs/
+*.log
+
+.ci/
+
+# Misc.
+tmp/
+public/
+doc/
+docs/
+dist/
+build/
+coverage/

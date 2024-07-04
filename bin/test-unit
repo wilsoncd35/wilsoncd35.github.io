@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+
+#
+# Execute unit tests.
+#
+
+# Config.
+  bin_path="$(dirname "$0")"
+  exit_code=0
+
+# Do it.
+  # TODO Ensure nyc and mocha are installed. Graceful exit.
+
+  "$bin_path"/../node_modules/.bin/nyc  \
+    --nycrc-path "$bin_path"/../test/unit/.nycrc.js  \
+    mocha --config "$bin_path"/../test/unit/.mocharc.cjs  \
+      --grep '(@bug|@improve)'  \
+      --invert  \
+      test/unit || exit_code="$?"
+
+# End info.
+  exit "$exit_code"
